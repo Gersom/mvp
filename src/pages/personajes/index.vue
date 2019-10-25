@@ -1,12 +1,11 @@
 <template lang='pug'>
     div
-        h1 INICIO
-        
+        h1 Galeria de Personajes
 </template>
 
 <script>
   export default {
-    name: 'Inicio'
+    name: 'Personajes'
   }
 </script>
 

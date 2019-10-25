@@ -1,12 +1,11 @@
 <template lang='pug'>
     div
-        h1 INICIO
-        
+        h1 Personaje especifico
 </template>
 
 <script>
   export default {
-    name: 'Inicio'
+    name: 'PersonajeId'
   }
 </script>
 

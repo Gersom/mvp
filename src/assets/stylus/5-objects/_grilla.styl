@@ -1,8 +1,8 @@
-$column_number = 1
-$column_space = 1.5
+$column_number = 4
+$column_space = 2.7
 
-
-
+$column_n_func = 100 / $column_number
+$column_s_func = ($column_space / 4)*3
 
 
 .o-grilla {
@@ -14,14 +14,18 @@ $column_space = 1.5
 }
 
     .o-grilla > li {
+      background: green
       flex: none;
-      margin-left: 0;
+      margin-right: $column_space rem
       margin-top: $column_space rem
-      width: 100%;
+      width: 'calc(%s% - %srem)' % ($column_n_func $column_s_func)
 
+      &:nth-child(4n){
+        margin-right: 0;
+      }
 
-      @for $i from 1 through $column_number {
-        &:nth-child($i) {
+      for num in (1..$column_number) {
+        &:nth-child({num}) {
           margin-top: 0;
         }
       }
@@ -29,67 +33,67 @@ $column_space = 1.5
 
   .element {}
 
-@media screen and (min-width: $breakpoint-sm) and (max-width: $breakpoint-md - 1px){
-  $column_number : 2;
+// @media screen and (min-width: $breakpoint-sm) and (max-width: $breakpoint-md - 1px){
+//   $column_number : 2;
 
 
-  .o-grilla > li {
-    flex: none;
-    margin-left: $column_space rem;
-    margin-top: $column_space rem;
-    width: "calc(100/$column_number)"% "-" "calc(($column_space/4)*3)"rem;
+//   .o-grilla > li {
+//     flex: none;
+//     margin-left: $column_space rem;
+//     margin-top: $column_space rem;
+//     width: "calc(100/$column_number)"% "-" "calc(($column_space/4)*3)"rem;
 
-    &:nth-child(2n+1){
-      margin-left: 0;
-    }
+//     &:nth-child(2n+1){
+//       margin-left: 0;
+//     }
 
-    @for $i from 1 through $column_number {
-      &:nth-child($i) {
-        margin-top: 0;
-      }
-    }
-  }
+//     @for $i from 1 through $column_number {
+//       &:nth-child($i) {
+//         margin-top: 0;
+//       }
+//     }
+//   }
 
-}
+// }
 
-@media screen and (min-width: $breakpoint-md) and (max-width: $breakpoint-lg  - 1px){
-  $column_number : 3;
+// @media screen and (min-width: $breakpoint-md) and (max-width: $breakpoint-lg  - 1px){
+//   $column_number : 3;
 
-  .o-grilla > li {
-    flex: none;
-    margin-left: $column_space rem
-    margin-top: $column_space rem
-    width: "calc(100/$column_number)"% "-" "calc(($column_space/4)*3)"rem
+//   .o-grilla > li {
+//     flex: none;
+//     margin-left: $column_space rem
+//     margin-top: $column_space rem
+//     width: "calc(100/$column_number)"% "-" "calc(($column_space/4)*3)"rem
 
-    &:nth-child(3n+1){
-      margin-left: 0;
-    }
+//     &:nth-child(3n+1){
+//       margin-left: 0;
+//     }
 
-    @for $i from 1 through $column_number {
-      &:nth-child($i) {
-        margin-top: 0;
-      }
-    }
-  }
-}
+//     @for $i from 1 through $column_number {
+//       &:nth-child($i) {
+//         margin-top: 0;
+//       }
+//     }
+//   }
+// }
 
-@media screen and (min-width: $breakpoint-lg) {
-  $column_number : 4;
+// @media screen and (min-width: $breakpoint-lg) {
+//   $column_number : 4;
 
-  .o-grilla > li {
-    flex: none;
-    margin-left: $column_space rem
-    margin-top: $column_space rem
-    width: "calc(100/$column_number)"% "-" "calc(($column_space/4)*3)"rem
+//   .o-grilla > li {
+//     flex: none;
+//     margin-left: $column_space rem
+//     margin-top: $column_space rem
+//     width: "calc(100/$column_number)"% "-" "calc(($column_space/4)*3)"rem
 
-    &:nth-child(4n+1){
-      margin-left: 0;
-    }
+//     &:nth-child(4n+1){
+//       margin-left: 0;
+//     }
 
-    @for $i from 1 through $column_number {
-      &:nth-child($i) {
-        margin-top: 0;
-      }
-    }
-  }
-}
+//     @for $i from 1 through $column_number {
+//       &:nth-child($i) {
+//         margin-top: 0;
+//       }
+//     }
+//   }
+// }

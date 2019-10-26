@@ -1,6 +1,7 @@
 <template lang='pug'>
     div
-        h1 INICIO
+      nuxt-link(to="/peliculas")
+        h1 Ingresar
         
 </template>
 

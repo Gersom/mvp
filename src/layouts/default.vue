@@ -1,5 +1,5 @@
 <template>
   <div>
-    <nuxt />
+    <nuxt class="u-bg-tertiary" />
   </div>
 </template>

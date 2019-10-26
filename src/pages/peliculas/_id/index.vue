@@ -33,31 +33,31 @@
 </template>
 
 <script>
-    import axios from 'axios'
-    import BtnFloat from '../../../components/Btn-float'
-    export default {
-        name: 'PeliculaId',
-        components: {
-            BtnFloat
-        },
-        data (){
-            return{
-                film: {
-                    title: '---',
-                    director: '---',
-                    producer: '---',
-                    episode_id: '0',
-                    opening_crawl: '',
-                    species:[],
-                    characters:[]
-                }
-            }
-        },
-        created: async function() {
-            let film = await axios.get(`https://swapi.co/api/films/${this.$route.params.id}`)
-            this.film = film.data
-        },
-    }
+  import axios from 'axios'
+  import BtnFloat from '../../../components/Btn-float'
+  export default {
+    name: 'PeliculaId',
+    components: {
+      BtnFloat
+    },
+    data (){
+      return{
+        film: {
+          title: '---',
+          director: '---',
+          producer: '---',
+          episode_id: '0',
+          opening_crawl: '',
+          species:[],
+          characters:[]
+        }
+      }
+    },
+    created: async function() {
+      let film = await axios.get(`https://swapi.co/api/films/${this.$route.params.id}`)
+      this.film = film.data
+    },
+  }
 </script>
 
 <style lang='stylus' scoped>

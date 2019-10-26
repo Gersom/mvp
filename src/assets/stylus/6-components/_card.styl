@@ -1,0 +1,34 @@
+.c-card
+    cursor: pointer
+    overflow: hidden
+    position: relative
+    transition: .3s ease-in-out
+
+    &__date
+        background: orange
+        border-bottom-left-radius: 0.5rem
+        border-top-left-radius: 0.5rem
+        color: #ffffff
+        padding: 0.5rem 1rem
+        position: absolute
+        right: 0
+        top: 0
+
+    &__title
+        padding-left: 0.5rem
+        padding-right: 0.5rem
+        height 2.5rem
+
+    &:hover
+        box-shadow: 3px 3px 10px rgba(0,0,0,.35);
+    figure,
+    img
+        width: 100%
+
+    figure img
+        transform: scale(1);
+        transition: .3s ease-in-out
+
+    &:hover figure img
+        transform: scale(1.1)
+

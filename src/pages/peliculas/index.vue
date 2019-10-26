@@ -16,15 +16,17 @@
                     v-for='film in films' :key="film.episode_id")
                     nuxt-link(:to="`/peliculas/${film.url.substring(27,film.url.length-1)}`")
                         Card(:title='film.title' :release="new Date(film.release_date)" :episode="film.episode_id")
+        btn-float(url="/")
 </template>
 
 <script>
 import axios from 'axios'
 import Card from '../../components/Card'
+import BtnFloat from '../../components/Btn-float'
 export default {
     name: 'Peliculas',
     components: {
-        Card
+        Card, BtnFloat
     },
     data() {
         return {

@@ -7,13 +7,15 @@
                 span Filtrar por:
             button.c-filter__btn(v-on:click="OrderDate")
                 span Fecha de lanzamiento
+            
             button.c-filter__btn(v-on:click="OrderEpisode")
                 span Numero de episodios
         .u-px3
             ul.o-grilla.c-container-cards
                 li.c-container-cards__item(
                     v-for='film in films' :key="film.episode_id")
-                    Card(:title='film.title' :release="new Date(film.release_date)" :episode="film.episode_id")
+                    nuxt-link(:to="`/peliculas/${film.url.substring(27,film.url.length-1)}`")
+                        Card(:title='film.title' :release="new Date(film.release_date)" :episode="film.episode_id")
 </template>
 
 <script>
